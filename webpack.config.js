@@ -10,7 +10,8 @@ module.exports = {
     loaders: [{
       test: /\.js?$/,
       exclude: /node_modules/,
-      loader: 'react-hot!babel'
+      //loader: 'react-hot!babel'
+      loader: 'react-hot-loader/webpack'
     }]
   },
   resolve: {
