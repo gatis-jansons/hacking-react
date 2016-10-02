@@ -18,12 +18,12 @@ module.exports = {
     extensions: ['', '.js']
   },
   output: {
-    path: 'dist',
+    path: 'docs',
     publicPath: '/',
     filename: 'bundle.js'
   },
   devServer: {
-    contentBase: './dist',
+    contentBase: './docs',
     hot: true
   },
   plugins: [
