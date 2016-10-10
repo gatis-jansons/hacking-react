@@ -13,12 +13,12 @@
   "keywords": [],
   "author": "Bradley Bossard <bradleybossard@gmail.com> (http://bradleybossard.com/)",
   "license": "MIT",
-	"babel": {
-			"presets": [
-					"es2015",
-					"react"
-			]
-	},
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
+  },
   "bugs": {
     "url": "https://github.com/bradleybossard/hacking-with-react/issues"
   },
@@ -33,6 +33,7 @@
     "webpack-dev-server": "^1.16.1"
   },
   "dependencies": {
+    "babel-preset-react": "^6.16.0",
     "history": "^4.3.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",

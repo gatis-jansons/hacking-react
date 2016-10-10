@@ -7,12 +7,23 @@ module.exports = {
     './src/index.js'
   ],
   module: {
-    loaders: [{
+    loaders: [
+    {
       test: /\.js?$/,
       exclude: /node_modules/,
       //loader: 'react-hot!babel'
       loader: 'react-hot-loader/webpack'
-    }]
+    },
+    {
+    test: /\.jsx?$/,         // Match both .js and .jsx files
+    exclude: /node_modules/, 
+    loader: "babel", 
+    query:
+      {
+        presets:['react']
+      }
+    }
+    ]
   },
   resolve: {
     extensions: ['', '.js']
