@@ -2,22 +2,27 @@ import React from 'react';
 import Chance from 'chance';
 
 class Detail extends React.Component {
-  render() {
-    //return <p>{this.props.message}</p>;
-    //return <p>Hello {chance.first()}!</p>;
-    return (<div>
-             <p>Hello {chance.first()}!</p>
-						<p>You're from {chance.country({ full: true })}.</p>
-					  </div>);
-/*
-    {
-        chance.first() == 'John'
-        ? 'Hello, John!'
-        : 'Hello, world!'
-    }
-    </p>;
-*/
-  }
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			name: chance.first(),
+			country: chance.country({ full: true })
+		};
+	}
+
+
+	buttonClicked() {
+		console.log('Button was clicked!')
+	}
+
+	render() {
+		return (<div>
+				<p>Hello, {this.state.name}.</p>
+				<p>You're from {this.state.country}.</p>
+				<button onClick={this.buttonClicked.bind(this)}>Meet Someone New</button>
+				</div>);
+	}
 }
 
 export default Detail;
