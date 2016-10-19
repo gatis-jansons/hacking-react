@@ -11,9 +11,12 @@ class Detail extends React.Component {
 		};
 	}
 
-
 	buttonClicked() {
-		console.log('Button was clicked!')
+			const newState = {
+					name: chance.first()
+			};
+
+			this.setState(newState);
 	}
 
 	render() {
