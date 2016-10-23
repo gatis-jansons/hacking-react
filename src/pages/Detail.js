@@ -14,35 +14,22 @@ class Detail extends React.Component {
 		};
 	}
 
-	componentWillMount() {
-		ajax.get('https://api.github.com/repos/facebook/react/commits')
+	fetchFeed(type) {
+		ajax.get(`https://api.github.com/repos/facebook/react/${type}`)
 			.end((error, response) => {
 				if (!error && response) {
-					this.setState({ commits: response.body });
+					this.setState({ [type]: response.body });
 				} else {
-					console.log('There was an error fetching from GitHub', error);
+					console.log(`Error fetching ${type}`, error);
 				}
-			});
+			}
+			);
+	}
 
-    ajax.get('https://api.github.com/repos/facebook/react/forks')
-        .end((error, response) => {
-            if (!error && response) {
-                this.setState({ forks: response.body });
-            } else {
-                console.log('Error fetching forks', error);
-            }
-        }
-    );
-
-    ajax.get('https://api.github.com/repos/facebook/react/pulls')
-        .end((error, response) => {
-            if (!error && response) {
-                this.setState({ pulls: response.body });
-            } else {
-                console.log('Error fetching pulls', error);
-            }
-        }
-    );
+	componentWillMount() {
+    this.fetchFeed('commits');
+    this.fetchFeed('forks');
+    this.fetchFeed('pulls');
 	}
 
 	renderCommits() {
