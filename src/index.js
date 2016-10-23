@@ -4,10 +4,12 @@ import { Router, Route, hashHistory } from 'react-router';
 import { createHashHistory } from 'history';
 
 import Detail from './pages/Detail';
+import List from './pages/List';
 
 ReactDOM.render(
 	<Router history={hashHistory}>
-	<Route path="/" component={ Detail } />
+	<Route path="/" component={ List } />
+	<Route path="/react" component={ Detail } />
 	</Router>,
 	document.getElementById('app')
 );
